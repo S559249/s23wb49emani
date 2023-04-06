@@ -34,6 +34,11 @@ block content
     .row 
     
       each i in results
-        div(class="col-sm-2" style=`border:solid 2px black`) 
+        div(class="col-sm-2" style=`border:solid 2px black ` onclick=`buy(${results.indexOf(i)})`) 
           each value,key in i 
             = key + " : " + value
+            br
+  script.
+    function buy(index){
+      alert("You purchased item "+index)
+    }
